@@ -19,29 +19,51 @@ public class Splash extends Activity{
 		setContentView(R.layout.splash);
 		
 		// Start timer and launch main activity
-	    IntentLauncher launcher = new IntentLauncher();
-	    launcher.start();
+	    //IntentLauncher launcher = new IntentLauncher();
+	    //launcher.start();
+	    
+		Thread timer = new Thread() {
+			
+			public void run() {
+				
+				try {
+					sleep(5000); //5 sec.
+				} catch( InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					Intent openMyBasicCalc = new Intent("com.example.mybasiccalc.MainActivity");
+					startActivity(openMyBasicCalc);
+					finish();
+				}
+				
+			} //run
+		}; //thread
+	    
+		timer.start();
+	    
+	    
 	}
 	
-	private class IntentLauncher extends Thread {
-	      @Override
-	      /**
-	       * Sleep for some time and than start new activity.
-	       */
-	      public void run() {
-	         try {
+	//private class IntentLauncher extends Thread {
+	      //@Override
+	      //**
+	      // * Sleep for some time and than start new activity.
+	      // */
+	      
+	      //public void run() {
+	      //   try {
 	            // Sleeping
-	            Thread.sleep(SLEEP_TIME*1000);
-	         } catch (Exception e) {
-	            Log.e(TAG, e.getMessage());
-	         }
+	      //      Thread.sleep(SLEEP_TIME*1000);
+	      //   } catch (Exception e) {
+	      //      Log.e(TAG, e.getMessage());
+	      //   }
 	 
 	         // Start main activity
-	         Intent intent = new Intent(Splash.this, MainActivity.class);
-	         Splash.this.startActivity(intent);
-	         Splash.this.finish();
-	      }
-	   }
+	      //   Intent intent = new Intent(Splash.this, MainActivity.class);
+	      //   Splash.this.startActivity(intent);
+	      //   Splash.this.finish();
+	      //}
+	 //  }
 	
 	
 }
