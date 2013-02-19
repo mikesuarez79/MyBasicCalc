@@ -23,8 +23,8 @@ public class MainActivity extends Activity {
 		
 		//initialization
 		counter = 0;
-		add = (Button) findViewById(R.id.btnAdd);
-		minus = (Button) findViewById(R.id.btnMinus);
+		add = (Button) findViewById(R.id.btn1);
+		minus = (Button) findViewById(R.id.btn2);
 		display = (TextView) findViewById(R.id.tvDisplay);
 		
 		add.setOnClickListener(new View.OnClickListener() {
