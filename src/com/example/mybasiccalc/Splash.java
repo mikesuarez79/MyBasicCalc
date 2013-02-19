@@ -50,6 +50,7 @@ public class Splash extends Activity{
 	      // * Sleep for some time and than start new activity.
 	      // */
 	      
+	
 	      //public void run() {
 	      //   try {
 	            // Sleeping
