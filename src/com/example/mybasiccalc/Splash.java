@@ -3,7 +3,6 @@ package com.example.mybasiccalc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 
 public class Splash extends Activity{
@@ -24,6 +23,7 @@ public class Splash extends Activity{
 	    
 		Thread timer = new Thread() {
 			
+			@Override
 			public void run() {
 				
 				try {
@@ -33,7 +33,7 @@ public class Splash extends Activity{
 				} finally {
 					Intent openMyBasicCalc = new Intent("com.example.mybasiccalc.MainActivity");
 					startActivity(openMyBasicCalc);
-					finish();
+					
 				}
 				
 			} //run
@@ -43,6 +43,15 @@ public class Splash extends Activity{
 	    
 	    
 	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish();
+	}
+	
+	
 	
 	//private class IntentLauncher extends Thread {
 	      //@Override
