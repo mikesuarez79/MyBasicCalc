@@ -36,7 +36,7 @@ public class Splash extends Activity{
 					
 				}
 				
-			} //run
+			} //run timer
 		}; //thread
 	    
 		timer.start();
